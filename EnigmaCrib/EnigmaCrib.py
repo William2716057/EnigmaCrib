@@ -10,9 +10,9 @@ valid = []
 for i in range(len(ciphertext) - len(plaintext) +1):
     #extract possible cribs from ciphertext
     possible = ciphertext[i:i+len(plaintext)]
-    
+    #search for characters encoded as themselves
     if all(c != p for c, p in zip(possible, plaintext)):
-        #if not match add to list
+        #if no matches found add to list
         valid.append(possible)
         
 #print all valid cribs
